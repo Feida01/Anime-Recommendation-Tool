@@ -1,0 +1,29 @@
+name: ETL Pipeline
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  
+  push:
+    branches:
+    - main
+
+jobs:
+  etl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+
+      - name: Extract data
+        run: python extract.py
+
+      - name: Transform data
+        run: python transform.py
+
+      - name: Load data
+        run: python load.py
