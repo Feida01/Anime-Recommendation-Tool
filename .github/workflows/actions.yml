@@ -25,5 +25,5 @@ jobs:
       - name: Transform data
         run: python etl/transform.py
 
-      - name: Load data
-        run: python etl/load.py
+#      - name: Load data
+#        run: python etl/load.py
