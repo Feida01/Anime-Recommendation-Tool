@@ -35,7 +35,7 @@ num_pages = 1
 anime_data = retrieve_top_anime(num_pages)
 
 # Save anime data as JSON file
-with open("anime_data.json", "w") as json_file:
+with open("data/anime_data.json", "w") as json_file:
     json.dump(anime_data, json_file)
 
 # Count the number of extracted anime
