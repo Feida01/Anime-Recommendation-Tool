@@ -29,7 +29,7 @@ def retrieve_top_anime(pages):
 
 
 # Specify the number of pages you want to retrieve (e.g., 5)
-num_pages = 1
+num_pages = 20
 
 # Retrieve the specified number of anime pages
 anime_data = retrieve_top_anime(num_pages)
