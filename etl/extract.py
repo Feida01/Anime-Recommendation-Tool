@@ -14,7 +14,6 @@ def retrieve_top_anime(pages):
         if response.status_code == 200:
             data = response.json()
 
-            # Extracting anime data
             anime_data_page = data.get("data", [])
             new_anime_data.extend(anime_data_page)
 
@@ -28,17 +27,13 @@ def retrieve_top_anime(pages):
     return new_anime_data
 
 
-# Specify the number of pages you want to retrieve (e.g., 5)
 num_pages = 20
 
-# Retrieve the specified number of anime pages
 anime_data = retrieve_top_anime(num_pages)
 
-# Save anime data as JSON file
 with open("data/anime_data.json", "w") as json_file:
     json.dump(anime_data, json_file)
 
-# Count the number of extracted anime
 num_anime_extracted = len(anime_data)
 
 print(f"Total anime extracted: {num_anime_extracted}")
